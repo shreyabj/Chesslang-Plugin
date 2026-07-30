@@ -112,14 +112,15 @@ Many bugs on TrainerDB (broken login, missing backend routes, broken API endpoin
 
 **Option A — Clone via Git:**
 ```bash
-git clone https://github.com/yourusername/trainerdb-enhanced.git
-cd trainerdb-enhanced
+git clone https://github.com/shreyabj/Chesslang-Plugin.git
+cd Chesslang-Plugin
 ```
 
-**Option B — Download ZIP:**
-1. Click the green **Code** button on GitHub
-2. Click **Download ZIP**
-3. Extract the folder to your Desktop or any location you'll remember
+**Option B — Download ZIP (No Git needed):**
+1. Go to **https://github.com/shreyabj/Chesslang-Plugin**
+2. Click the green **Code** button
+3. Click **Download ZIP**
+4. Extract the folder to your Desktop
 
 ---
 
@@ -153,7 +154,7 @@ The extension requires three icon files. Follow one of these methods:
 
 3. Click **Load unpacked**
 
-4. Select your `trainerdb-enhanced` folder
+4. Select the `Chesslang-Plugin` folder
 
 5. The extension card should appear with no errors and the icon should show in your Chrome toolbar
 
@@ -181,7 +182,7 @@ After any code change:
 ## 🗂️ Project Structure
 
 ```
-trainerdb-enhanced/
+Chesslang-Plugin/
 ├── manifest.json       # Extension config (Manifest V3)
 ├── background.js       # Service worker for message passing
 ├── content.js          # Injected into TrainerDB pages
