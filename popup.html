@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrainerDB Enhanced</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <div class="logo">♟️</div>
+        <div>
+          <h1>TrainerDB Enhanced</h1>
+          <p class="subtitle">Compare • Export • Navigate</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="compare">📊 Compare</button>
+      <button class="tab" data-tab="summary">✨ Summary</button>
+      <button class="tab" data-tab="notes">📝 Notes</button>
+      <button class="tab" data-tab="export">📥 Export</button>
+    </div>
+
+    <!-- Compare Tab -->
+    <div class="tab-content active" id="compare-tab">
+      <div class="info-card">
+        <p><strong>💡 How to use:</strong></p>
+        <p>Click "+ Compare" on trainer cards to save them for comparison</p>
+      </div>
+
+      <div class="stats-bar">
+        <span id="trainerCount">0 trainers saved</span>
+        <button id="clearBtn" class="btn-text">Clear All</button>
+      </div>
+
+      <div id="trainerList" class="trainer-list"></div>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">🎯</div>
+        <p>No trainers saved yet</p>
+        <p class="hint">Browse TrainerDB and click "+ Compare"</p>
+      </div>
+
+      <div class="action-buttons">
+        <button id="compareBtn" class="btn-primary" disabled>
+          Compare All
+        </button>
+        <button id="exportCSVBtn" class="btn-secondary" disabled>
+          Export CSV
+        </button>
+      </div>
+    </div>
+
+    <!-- Summary Tab -->
+    <div class="tab-content" id="summary-tab">
+      <div class="info-card">
+        <p><strong>✨ Smart Summary:</strong></p>
+        <p>Get a quick overview of your saved trainers with key highlights</p>
+      </div>
+
+      <div id="summarySection">
+        <div class="empty-state show" id="emptySummary">
+          <div class="empty-icon">✨</div>
+          <p>No trainers to summarize</p>
+          <p class="hint">Add trainers to comparison first</p>
+        </div>
+
+        <div id="summaryContent" style="display: none;">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="summary-actions">
+        <button id="refreshSummaryBtn" class="btn-primary" style="width: 100%; margin-top: 12px;">
+          🔄 Refresh Summary
+        </button>
+      </div>
+    </div>
+
+    <!-- Notes Tab -->
+    <div class="tab-content" id="notes-tab">
+      <div class="info-card">
+        <p><strong>💡 Pro Tip:</strong></p>
+        <p>Add personal notes to each trainer in your comparison list. Notes are saved automatically!</p>
+      </div>
+
+      <div id="notesSection">
+        <div class="empty-state show" id="emptyNotes">
+          <div class="empty-icon">📝</div>
+          <p>No trainers saved yet</p>
+          <p class="hint">Add trainers to comparison first</p>
+        </div>
+
+        <div id="notesList" style="display: none;">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="notes-actions">
+        <button id="clearNotesBtn" class="btn-secondary" style="width: 100%; margin-top: 12px;">
+          Clear All Notes
+        </button>
+      </div>
+    </div>
+
+    <!-- Export Tab -->
+    <div class="tab-content" id="export-tab">
+      <div class="info-card">
+        <p><strong>📊 Export Options</strong></p>
+        <p>Export trainer comparisons in various formats</p>
+      </div>
+
+      <button class="export-option" id="exportJSON">
+        <span class="export-icon">📄</span>
+        <div>
+          <h3>Export as JSON</h3>
+          <p>Structured data format</p>
+        </div>
+      </button>
+
+      <button class="export-option" id="exportCSV">
+        <span class="export-icon">📊</span>
+        <div>
+          <h3>Export as CSV</h3>
+          <p>Open in Excel/Sheets</p>
+        </div>
+      </button>
+
+      <button class="export-option" id="exportText">
+        <span class="export-icon">📝</span>
+        <div>
+          <h3>Export as Text</h3>
+          <p>Simple text format</p>
+        </div>
+      </button>
+
+      <div class="info-card" style="margin-top: 16px;">
+        <p style="font-size: 12px; color: #7f8c8d;">
+          💡 <strong>Tip:</strong> Add trainers to compare first, then export!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
